@@ -15,6 +15,15 @@
 		E907ABFC25855E8F00DEC4D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E907ABFA25855E8F00DEC4D2 /* LaunchScreen.storyboard */; };
 		E907AC0725855E9000DEC4D2 /* MovementPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907AC0625855E9000DEC4D2 /* MovementPracticeTests.swift */; };
 		E907AC1225855E9000DEC4D2 /* MovementPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907AC1125855E9000DEC4D2 /* MovementPracticeUITests.swift */; };
+		E9106CB92589A216008EB8DB /* Math+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9106CB82589A216008EB8DB /* Math+Ext.swift */; };
+		E9106CC22589A42E008EB8DB /* NANBoxEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9106CC12589A42E008EB8DB /* NANBoxEntity.swift */; };
+		E9106CCC2589AA63008EB8DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9106CCB2589AA63008EB8DB /* Extensions.swift */; };
+		E9A536FB258A65E300D9BF66 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F3258A65E300D9BF66 /* HelperFunctions.swift */; };
+		E9A536FC258A65E300D9BF66 /* RealityKit+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F4258A65E300D9BF66 /* RealityKit+Helpers.swift */; };
+		E9A536FD258A65E300D9BF66 /* VideoMaterialWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F5258A65E300D9BF66 /* VideoMaterialWrapper.swift */; };
+		E9A536FE258A65E300D9BF66 /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F6258A65E300D9BF66 /* WeakReference.swift */; };
+		E9A53700258A65E300D9BF66 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F8258A65E300D9BF66 /* Easing.swift */; };
+		E9A53701258A65E300D9BF66 /* OSLog+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		E907AC0D25855E9000DEC4D2 /* MovementPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovementPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E907AC1125855E9000DEC4D2 /* MovementPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementPracticeUITests.swift; sourceTree = "<group>"; };
 		E907AC1325855E9000DEC4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9106CB82589A216008EB8DB /* Math+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Math+Ext.swift"; sourceTree = "<group>"; };
+		E9106CC12589A42E008EB8DB /* NANBoxEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NANBoxEntity.swift; sourceTree = "<group>"; };
+		E9106CCB2589AA63008EB8DB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E9A536F3258A65E300D9BF66 /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		E9A536F4258A65E300D9BF66 /* RealityKit+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealityKit+Helpers.swift"; sourceTree = "<group>"; };
+		E9A536F5258A65E300D9BF66 /* VideoMaterialWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMaterialWrapper.swift; sourceTree = "<group>"; };
+		E9A536F6258A65E300D9BF66 /* WeakReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakReference.swift; sourceTree = "<group>"; };
+		E9A536F8258A65E300D9BF66 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
+		E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OSLog+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +117,13 @@
 		E907ABEE25855E8E00DEC4D2 /* MovementPractice */ = {
 			isa = PBXGroup;
 			children = (
-				E907ABEF25855E8E00DEC4D2 /* AppDelegate.swift */,
+				E9A536F1258A65B700D9BF66 /* Support */,
+				E9A536EB258A634E00D9BF66 /* Settings */,
+				E9A536E9258A633000D9BF66 /* Resources */,
+				E9A536E8258A630700D9BF66 /* Utilities */,
+				E9106CC02589A3E3008EB8DB /* CustomEntities */,
+				E9106CB72589A203008EB8DB /* Extensions */,
 				E907ABF125855E8E00DEC4D2 /* ViewController.swift */,
-				E907ABF325855E8E00DEC4D2 /* Experience.rcproject */,
-				E907ABF525855E8E00DEC4D2 /* Main.storyboard */,
-				E907ABF825855E8F00DEC4D2 /* Assets.xcassets */,
-				E907ABFA25855E8F00DEC4D2 /* LaunchScreen.storyboard */,
 				E907ABFD25855E8F00DEC4D2 /* Info.plist */,
 			);
 			path = MovementPractice;
@@ -126,6 +145,110 @@
 				E907AC1325855E9000DEC4D2 /* Info.plist */,
 			);
 			path = MovementPracticeUITests;
+			sourceTree = "<group>";
+		};
+		E9106CB72589A203008EB8DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */,
+				E9A536F4258A65E300D9BF66 /* RealityKit+Helpers.swift */,
+				E9106CCB2589AA63008EB8DB /* Extensions.swift */,
+				E9106CB82589A216008EB8DB /* Math+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9106CC02589A3E3008EB8DB /* CustomEntities */ = {
+			isa = PBXGroup;
+			children = (
+				E9106CC12589A42E008EB8DB /* NANBoxEntity.swift */,
+			);
+			path = CustomEntities;
+			sourceTree = "<group>";
+		};
+		E9A536E8258A630700D9BF66 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E9A536F8258A65E300D9BF66 /* Easing.swift */,
+				E9A536F3258A65E300D9BF66 /* HelperFunctions.swift */,
+				E9A536F5258A65E300D9BF66 /* VideoMaterialWrapper.swift */,
+				E9A536F6258A65E300D9BF66 /* WeakReference.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E9A536E9258A633000D9BF66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E907ABF825855E8F00DEC4D2 /* Assets.xcassets */,
+				E907ABF525855E8E00DEC4D2 /* Main.storyboard */,
+				E907ABFA25855E8F00DEC4D2 /* LaunchScreen.storyboard */,
+				E907ABF325855E8E00DEC4D2 /* Experience.rcproject */,
+				E9A536EA258A633F00D9BF66 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9A536EA258A633F00D9BF66 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E9A536EF258A638D00D9BF66 /* Audio */,
+				E9A536EE258A637800D9BF66 /* Textures */,
+				E9A536ED258A636F00D9BF66 /* Models */,
+				E9A536EC258A635B00D9BF66 /* Animations */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E9A536EB258A634E00D9BF66 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E9A536EC258A635B00D9BF66 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		E9A536ED258A636F00D9BF66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E9A536EE258A637800D9BF66 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				E9A536F0258A63BE00D9BF66 /* Video */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		E9A536EF258A638D00D9BF66 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		E9A536F0258A63BE00D9BF66 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		E9A536F1258A65B700D9BF66 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E907ABEF25855E8E00DEC4D2 /* AppDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +382,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E907ABF225855E8E00DEC4D2 /* ViewController.swift in Sources */,
+				E9A536FB258A65E300D9BF66 /* HelperFunctions.swift in Sources */,
+				E9A536FC258A65E300D9BF66 /* RealityKit+Helpers.swift in Sources */,
+				E9106CCC2589AA63008EB8DB /* Extensions.swift in Sources */,
+				E9A536FD258A65E300D9BF66 /* VideoMaterialWrapper.swift in Sources */,
+				E9106CC22589A42E008EB8DB /* NANBoxEntity.swift in Sources */,
+				E9A53701258A65E300D9BF66 /* OSLog+Helpers.swift in Sources */,
 				E907ABF025855E8E00DEC4D2 /* AppDelegate.swift in Sources */,
 				E907ABF425855E8E00DEC4D2 /* Experience.rcproject in Sources */,
+				E9A53700258A65E300D9BF66 /* Easing.swift in Sources */,
+				E9106CB92589A216008EB8DB /* Math+Ext.swift in Sources */,
+				E9A536FE258A65E300D9BF66 /* WeakReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
