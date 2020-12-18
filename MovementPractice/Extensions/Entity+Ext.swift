@@ -47,6 +47,7 @@ extension Publishers {
         private var subscriber: S?
         private weak var entity: Entity?
         private var subscribedEntityProperty: Entity.PropertyName
+        
         init(subscriber: S, entity: Entity, propertyName: Entity.PropertyName) {
             self.subscriber = subscriber
             self.entity = entity
@@ -55,7 +56,7 @@ extension Publishers {
         }
         
         func request(_ demand: Subscribers.Demand) { }
-
+//TODO: IMPLEMENT REQUEST
         func cancel() {
             subscriber = nil
             entity = nil
@@ -64,13 +65,11 @@ extension Publishers {
         }
         
         private func subscribe() {
-            print(#function)
 
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(sendEntityValue), userInfo: nil, repeats: true)
         }
         
         @objc func sendEntityValue() {
-            //print(#file, #function, String(#line) + " sending transform\n")
 
             guard let entity = entity else { return }
             
