@@ -102,38 +102,38 @@ extension ARCamera {
     }
 }
 
-//extension Entity {
-//    @available(iOS 14.0, macOS 10.16, *)
-//    public func attachDebugModelComponent(_ debugModel: ModelDebugOptionsComponent) {
-//        components.set(debugModel)
-//        children.forEach { $0.attachDebugModelComponent(debugModel) }
-//    }
-//
-//    @available(iOS 14.0, macOS 10.16, *)
-//    public func removeDebugModelComponent() {
-//        components[ModelDebugOptionsComponent.self] = nil
-//        children.forEach { $0.removeDebugModelComponent() }
-//    }
-//
-//    public func shaderDebug(_ index: Int) {
-//        guard #available(iOS 14.0, macOS 10.16, *) else { return }
-//
-//        var mewDebugModel: ModelDebugOptionsComponent?
-//        switch index {
-//        case 0: mewDebugModel = nil
-//        case 1: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .baseColor)
-//        case 2: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .normal)
-//        case 3: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .textureCoordinates)
-//        default: mewDebugModel = nil
-//        }
-//
-//        if let mewDebugModel = mewDebugModel {
-//            attachDebugModelComponent(mewDebugModel)
-//        } else {
-//            removeDebugModelComponent()
-//        }
-//    }
-//}
+extension Entity {
+    @available(iOS 14.0, macOS 10.16, *)
+    public func attachDebugModelComponent(_ debugModel: ModelDebugOptionsComponent) {
+        components.set(debugModel)
+        children.forEach { $0.attachDebugModelComponent(debugModel) }
+    }
+
+    @available(iOS 14.0, macOS 10.16, *)
+    public func removeDebugModelComponent() {
+        components[ModelDebugOptionsComponent.self] = nil
+        children.forEach { $0.removeDebugModelComponent() }
+    }
+
+    public func shaderDebug(_ index: Int) {
+        guard #available(iOS 14.0, macOS 10.16, *) else { return }
+
+        var mewDebugModel: ModelDebugOptionsComponent?
+        switch index {
+        case 0: mewDebugModel = nil
+        case 1: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .baseColor)
+        case 2: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .normal)
+        case 3: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .textureCoordinates)
+        default: mewDebugModel = nil
+        }
+
+        if let mewDebugModel = mewDebugModel {
+            attachDebugModelComponent(mewDebugModel)
+        } else {
+            removeDebugModelComponent()
+        }
+    }
+}
 
 extension Entity {
     public func forEachInHierarchy(depth: Int = 0, closure: (Entity, Int) throws -> Void) rethrows {

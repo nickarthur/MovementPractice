@@ -34,71 +34,46 @@ class ViewController: UIViewController {
         boxScene.actions.cubeTapped.onAction = handleTapped(_:)
         
         if let utilityBox = boxScene.utilityBox {
+            utilityBox.removeFromParent()
             nanBox = NANBoxEntity(entity: utilityBox)
-            arView.installGestures(for: nanBox)
+            
+            arView.installGestures(for: utilityBox as! HasCollision)
+            
             let anchor = AnchorEntity()
             anchor.addChild(nanBox)
             arView.scene.addAnchor(anchor)
             
-            boxCancellable = nanBox.$transform.throttle(for: 0.5, scheduler: RunLoop.main, latest: true).sink(receiveValue: { (transform) in
-                    print(String(describing: transform))
-            })
+            boxCancellable = nanBox.publisher.sink(receiveValue: { (transform) in
+                print( "\n\n****GOT IT!!!!\n\n" + String(describing: transform) + "\n**** GOOD")
+        })
         }
-        
     }
     
     
     func handleTapped(_ entity: Entity?) {
+        
         guard let entity = entity else { return }
         isEditMode.toggle()
         
-        print("Entity Tapped: \(entity.name)")
+        print("\n\n**** THREAD in handleTapped \(String(describing: Thread.current.name))")
+                                
+        print("\n\nEntity Tapped: \(entity.name)\n")
+        print("Parent Name: \(String(describing: entity.parent?.name))\n\n")
         
-        if isEditMode {
+        print("UtilityBox Child-Entity TRANSFORM \(String(describing: entity.transform))")
+        print("PARENT(wrapper) TRANSFORM \(String(describing: entity.parent?.transform))")
+        
+        if self.isEditMode {
             self.nanBox.shaderDebug(2)
         } else {
             self.nanBox.shaderDebug(0)
         }
-        
     }
     
-    deinit {
-        boxCancellable?.cancel()
-    }
+//    deinit {
+//        boxCancellable?.cancel()
+//    }
 }
 
-
-extension Entity {
-    @available(iOS 14.0, macOS 10.16, *)
-    public func attachDebugModelComponent(_ debugModel: ModelDebugOptionsComponent) {
-        components.set(debugModel)
-        children.forEach { $0.attachDebugModelComponent(debugModel) }
-    }
-
-    @available(iOS 14.0, macOS 10.16, *)
-    public func removeDebugModelComponent() {
-        components[ModelDebugOptionsComponent.self] = nil
-        children.forEach { $0.removeDebugModelComponent() }
-    }
-
-    public func shaderDebug(_ index: Int) {
-        guard #available(iOS 14.0, macOS 10.16, *) else { return }
-
-        var mewDebugModel: ModelDebugOptionsComponent?
-        switch index {
-        case 0: mewDebugModel = nil
-        case 1: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .baseColor)
-        case 2: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .normal)
-        case 3: mewDebugModel = ModelDebugOptionsComponent(visualizationMode: .textureCoordinates)
-        default: mewDebugModel = nil
-        }
-
-        if let mewDebugModel = mewDebugModel {
-            attachDebugModelComponent(mewDebugModel)
-        } else {
-            removeDebugModelComponent()
-        }
-    }
-}
 
 

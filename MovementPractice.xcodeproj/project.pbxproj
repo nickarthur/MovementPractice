@@ -24,6 +24,7 @@
 		E9A536FE258A65E300D9BF66 /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F6258A65E300D9BF66 /* WeakReference.swift */; };
 		E9A53700258A65E300D9BF66 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F8258A65E300D9BF66 /* Easing.swift */; };
 		E9A53701258A65E300D9BF66 /* OSLog+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */; };
+		E9F889CC258C96DE00CD0E9E /* Entity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F889CB258C96DE00CD0E9E /* Entity+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E9A536F6258A65E300D9BF66 /* WeakReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakReference.swift; sourceTree = "<group>"; };
 		E9A536F8258A65E300D9BF66 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
 		E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OSLog+Helpers.swift"; sourceTree = "<group>"; };
+		E9F889CB258C96DE00CD0E9E /* Entity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				E9A536F4258A65E300D9BF66 /* RealityKit+Helpers.swift */,
 				E9106CCB2589AA63008EB8DB /* Extensions.swift */,
 				E9106CB82589A216008EB8DB /* Math+Ext.swift */,
+				E9F889CB258C96DE00CD0E9E /* Entity+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				E9106CC22589A42E008EB8DB /* NANBoxEntity.swift in Sources */,
 				E9A53701258A65E300D9BF66 /* OSLog+Helpers.swift in Sources */,
 				E907ABF025855E8E00DEC4D2 /* AppDelegate.swift in Sources */,
+				E9F889CC258C96DE00CD0E9E /* Entity+Ext.swift in Sources */,
 				E907ABF425855E8E00DEC4D2 /* Experience.rcproject in Sources */,
 				E9A53700258A65E300D9BF66 /* Easing.swift in Sources */,
 				E9106CB92589A216008EB8DB /* Math+Ext.swift in Sources */,
