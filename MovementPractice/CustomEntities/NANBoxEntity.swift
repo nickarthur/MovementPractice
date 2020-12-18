@@ -20,7 +20,16 @@ class NANBoxEntity: Entity, HasCollision {
             .throttle(for: 1, scheduler: RunLoop.main, latest: true)
             .sink { (transform) in
                 print("HERE IS THE TRANSFORM: \n\n" + String(describing: transform))
-                
+                let distanceFromOrigin = distance(transform.translation, SIMD3<Float>(repeating: 0))
+                print("THE ENTITY IS This Far From the Origin: \(distanceFromOrigin)")
+                if distanceFromOrigin > 1 {
+                    print("ENTITY TOO FAR AWAY!  Resetting!\n")
+                    // move entity back to the origin
+                    var homeTransform = Transform()
+                    homeTransform.translation = [0,0,-0.33]
+                    homeTransform.rotation = entity.transform.rotation
+                    entity.move(to: homeTransform, relativeTo: nil, duration: 1.5, timingFunction: .easeInOut)
+                }
             }
         
         super.init()
