@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var utilityBox: Entity? = nil
     var nanBox: NANBoxEntity!
     
-    var boxCancellable: AnyCancellable?
+    var cancellable: AnyCancellable?
     
     var currentUtilityBoxTransform: Transform?
     
@@ -43,9 +43,26 @@ class ViewController: UIViewController {
             anchor.addChild(nanBox)
             arView.scene.addAnchor(anchor)
             
-            boxCancellable = nanBox.publisher.sink(receiveValue: { (transform) in
-                print( "\n\n****GOT IT!!!!\n\n" + String(describing: transform) + "\n**** GOOD")
-        })
+            
+//            cancellable = nanBox.entity.transformPublisher
+//                .throttle(for: 1, scheduler: RunLoop.main, latest: true)
+//                .sink { (transform) in
+//                    print("HERE IS THE TRANSFORM: \n\n" + String(describing: transform))
+//                    let distanceFromOrigin = distance(transform.translation, SIMD3<Float>(repeating: 0))
+//                    print("THE ENTITY IS This Far From the Origin: \(distanceFromOrigin)")
+//                    if distanceFromOrigin > 1 {
+//                        print("ENTITY TOO FAR AWAY!  Resetting!\n")
+//                        // move entity back to the origin
+//                        var homeTransform = Transform()
+//                        homeTransform.translation = [0,0,-0.33]
+//                        homeTransform.rotation = self.nanBox.entity.transform.rotation
+//                        self.nanBox.entity.move(to: homeTransform, relativeTo: nil, duration: 1.5, timingFunction: .easeInOut)
+//                    }
+//                }
+            
+            cancellable = nanBox.entity.namePublisher.removeDuplicates().sink(receiveValue: { (name) in
+                print(name)
+            })
         }
     }
     
@@ -71,7 +88,7 @@ class ViewController: UIViewController {
     }
     
 //    deinit {
-//        boxCancellable?.cancel()
+//        cancellable?.cancel()
 //    }
 }
 

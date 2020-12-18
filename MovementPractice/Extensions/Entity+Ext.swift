@@ -5,45 +5,53 @@ import Combine
 import RealityKit
 
 extension Entity {
-    var publisher: Publishers.EntityTransformPublisher {
+    enum PropertyName {
+        case transform
+        case name
+    }
+    
+    var transformPublisher: Publishers.GenericEntityPublisher<Transform> {
         print("Gettig publisher")
-        return Publishers.EntityTransformPublisher(entity: self)
+        return Publishers.GenericEntityPublisher(entity: self, propertyName: .transform )
+    }
+    
+    var namePublisher: Publishers.GenericEntityPublisher<String> {
+        print("Gettig publisher")
+        return Publishers.GenericEntityPublisher(entity: self, propertyName: .name)
     }
 }
 
 extension Publishers {
-    struct EntityTransformPublisher: Publisher {
-        typealias Output = Transform
+    struct GenericEntityPublisher<T>: Publisher {
+        typealias Output = T
         typealias Failure = Never
 
         private let entity: Entity
-
-        init(entity: Entity) {
+        private let propertyName: Entity.PropertyName
+        
+        init(entity: Entity, propertyName: Entity.PropertyName) {
             self.entity = entity
-            print("YO! EntityTransformPublisher")
+            self.propertyName = propertyName
         }
         
-        func receive<S>(subscriber: S) where S : Subscriber, Publishers.EntityTransformPublisher.Failure == S.Failure, Publishers.EntityTransformPublisher.Output == S.Input {
-            let subscription = EntityTransformSubscription(subscriber: subscriber, entity: entity)
-            print(#function)
+        func receive<S>(subscriber: S) where S : Subscriber, Publishers.GenericEntityPublisher<T>.Failure == S.Failure, Publishers.GenericEntityPublisher<T>.Output == S.Input {
+            let subscription = EntitySubscription(subscriber: subscriber, entity: entity, propertyName: propertyName)
             subscriber.receive(subscription: subscription)
         }
     }
 
-    class EntityTransformSubscription<S: Subscriber>: Subscription where S.Input == Transform, S.Failure == Never {
+    class EntitySubscription<S: Subscriber,T>: Subscription where S.Input == T, S.Failure == Never {
 
         var timer: Timer?
         
         private var subscriber: S?
         private weak var entity: Entity?
-
-        init(subscriber: S, entity: Entity) {
+        private var subscribedEntityProperty: Entity.PropertyName
+        init(subscriber: S, entity: Entity, propertyName: Entity.PropertyName) {
             self.subscriber = subscriber
             self.entity = entity
+            self.subscribedEntityProperty = propertyName
             subscribe()
-            print("HELLO #function")
-            print(#function)
-
         }
         
         func request(_ demand: Subscribers.Demand) { }
@@ -58,14 +66,21 @@ extension Publishers {
         private func subscribe() {
             print(#function)
 
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(sendTransform), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(sendEntityValue), userInfo: nil, repeats: true)
         }
         
-        @objc func sendTransform() {
+        @objc func sendEntityValue() {
             //print(#file, #function, String(#line) + " sending transform\n")
 
             guard let entity = entity else { return }
-            _ = subscriber?.receive(entity.transform)
+            
+            switch self.subscribedEntityProperty {
+            case .name:
+                _ = subscriber?.receive(entity.name as! T)
+            case .transform:
+                _ = subscriber?.receive(entity.transform as! T)
+            }
+
         }
     }
 }
