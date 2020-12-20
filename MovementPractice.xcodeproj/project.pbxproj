@@ -25,6 +25,7 @@
 		E9A53700258A65E300D9BF66 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F8258A65E300D9BF66 /* Easing.swift */; };
 		E9A53701258A65E300D9BF66 /* OSLog+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */; };
 		E9F889CC258C96DE00CD0E9E /* Entity+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F889CB258C96DE00CD0E9E /* Entity+Ext.swift */; };
+		E9F889D2258D524B00CD0E9E /* EntitySubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F889D1258D524B00CD0E9E /* EntitySubscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		E9A536F8258A65E300D9BF66 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
 		E9A536F9258A65E300D9BF66 /* OSLog+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OSLog+Helpers.swift"; sourceTree = "<group>"; };
 		E9F889CB258C96DE00CD0E9E /* Entity+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Ext.swift"; sourceTree = "<group>"; };
+		E9F889D1258D524B00CD0E9E /* EntitySubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySubscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		E907ABEE25855E8E00DEC4D2 /* MovementPractice */ = {
 			isa = PBXGroup;
 			children = (
+				E9F889D0258D523200CD0E9E /* Subscribers */,
 				E9A536F1258A65B700D9BF66 /* Support */,
 				E9A536EB258A634E00D9BF66 /* Settings */,
 				E9A536E9258A633000D9BF66 /* Resources */,
@@ -252,6 +255,14 @@
 				E907ABEF25855E8E00DEC4D2 /* AppDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		E9F889D0258D523200CD0E9E /* Subscribers */ = {
+			isa = PBXGroup;
+			children = (
+				E9F889D1258D524B00CD0E9E /* EntitySubscriber.swift */,
+			);
+			path = Subscribers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +407,7 @@
 				E907ABF425855E8E00DEC4D2 /* Experience.rcproject in Sources */,
 				E9A53700258A65E300D9BF66 /* Easing.swift in Sources */,
 				E9106CB92589A216008EB8DB /* Math+Ext.swift in Sources */,
+				E9F889D2258D524B00CD0E9E /* EntitySubscriber.swift in Sources */,
 				E9A536FE258A65E300D9BF66 /* WeakReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

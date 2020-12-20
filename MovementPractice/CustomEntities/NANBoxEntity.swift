@@ -9,7 +9,7 @@ import UIKit
 import RealityKit
 import Combine
 
-class NANBoxEntity: Entity, HasCollision {
+class NANBoxEntity: Entity {
 
     public var entity: Entity
 

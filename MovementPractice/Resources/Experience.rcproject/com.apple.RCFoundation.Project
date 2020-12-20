@@ -87,6 +87,85 @@
                     }
                   ],
                   "__version" : 3
+                },
+                {
+                  "__content" : [
+                    {
+                      "accessibility" : {
+                        "__content" : [
+                          {
+                            "isEnabled" : false
+                          }
+                        ],
+                        "__version" : 1
+                      },
+                      "actionGroups" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurations" : [
+                                {
+                                  "__content" : [
+                                    {
+                                      "configurationBox" : {
+                                        "configuration" : {
+                                          "animationStyle" : "basic",
+                                          "duration" : 1,
+                                          "emphasisAnimationType" : "flip",
+                                          "iterations" : 1,
+                                          "target" : [
+                                            "53FC17B5-9978-4FAA-AD75-4A6D63451B31"
+                                          ]
+                                        },
+                                        "name" : {
+                                          "type" : "emphasis"
+                                        }
+                                      },
+                                      "identifier" : "5178AFC2-C1B1-4F6D-9DA0-4E626111B5FB",
+                                      "isEnabled" : true
+                                    }
+                                  ],
+                                  "__version" : 1
+                                }
+                              ],
+                              "identifier" : "44047E27-19A2-4F04-AF54-795278FAD6C0",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ],
+                      "color" : [
+                        0.21568627655506134,
+                        0.72549021244049072,
+                        0.80000001192092896,
+                        1
+                      ],
+                      "identifier" : "82A3EB86-A541-4513-B58A-34456A961963",
+                      "isEnabled" : true,
+                      "isLooping" : false,
+                      "isModal" : false,
+                      "name" : "Behavior 1",
+                      "triggers" : [
+                        {
+                          "__content" : [
+                            {
+                              "configurationBox" : {
+                                "configuration" : {
+                                  "userIdentifier" : "jiggleNotification"
+                                },
+                                "name" : "custom"
+                              },
+                              "identifier" : "61517FFF-2FB4-4AFE-AB04-C349F5798F07",
+                              "isEnabled" : true
+                            }
+                          ],
+                          "__version" : 1
+                        }
+                      ]
+                    }
+                  ],
+                  "__version" : 3
                 }
               ],
               "gravity" : [
@@ -973,21 +1052,21 @@
               "title" : "BoxScene",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.72105932235717773,
-                  -1.1175870895385742e-08,
-                  -0.69287323951721191,
+                  0.99811315536499023,
                   0,
-                  -0.18905563652515411,
-                  0.96205443143844604,
-                  -0.19674642384052277,
+                  0.061400938779115677,
                   0,
-                  0.66658180952072144,
-                  0.27285745739936829,
-                  0.69369840621948242,
+                  0.042568698525428772,
+                  0.7206578254699707,
+                  -0.6919826865196228,
                   0,
-                  0.91429984569549561,
-                  0.41509529948234558,
-                  0.74765050411224365,
+                  -0.044248949736356735,
+                  0.69329088926315308,
+                  0.71929806470870972,
+                  0,
+                  0.010735288262367249,
+                  0.63238745927810669,
+                  0.41887646913528442,
                   1
                 ],
                 "sceneTransform" : [
